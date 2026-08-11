@@ -1,0 +1,101 @@
+[gd_scene load_steps=15 format=3 uid="uid://bp80e46eckv55"]
+
+[ext_resource type="Script" uid="uid://bfsdnrsyh77u7" path="res://scenes/escudo.gd" id="1_valci"]
+[ext_resource type="Texture2D" uid="uid://bwc4s8fu24i35" path="res://resources/fx/escudo_animacion.png" id="2_kgdc3"]
+[ext_resource type="AudioStream" uid="uid://dkixc34p2uexi" path="res://resources/sounds/shield_01.wav" id="3_kgdc3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntlq2"]
+atlas = ExtResource("2_kgdc3")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uo2r7"]
+atlas = ExtResource("2_kgdc3")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyxx1"]
+atlas = ExtResource("2_kgdc3")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j1dw"]
+atlas = ExtResource("2_kgdc3")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvpf7"]
+atlas = ExtResource("2_kgdc3")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_valci"]
+atlas = ExtResource("2_kgdc3")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgdc3"]
+atlas = ExtResource("2_kgdc3")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wm4u"]
+atlas = ExtResource("2_kgdc3")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q81uf"]
+atlas = ExtResource("2_kgdc3")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwwy3"]
+atlas = ExtResource("2_kgdc3")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3wm4u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntlq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uo2r7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyxx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j1dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvpf7")
+}],
+"loop": false,
+"name": &"shield_in",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_valci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgdc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wm4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q81uf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwwy3")
+}],
+"loop": false,
+"name": &"shield_out",
+"speed": 20.0
+}]
+
+[node name="Escudo" type="Node2D"]
+script = ExtResource("1_valci")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3wm4u")
+animation = &"shield_out"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="sonido_escudo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kgdc3")

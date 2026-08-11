@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TubeContext" load_steps=2 format=3 uid="uid://dt0l8ll1uodba"]
+
+[ext_resource type="Script" uid="uid://t4pe7yqc3pnt" path="res://addons/tube/tube_context.gd" id="1_joa4x"]
+
+[resource]
+script = ExtResource("1_joa4x")
+app_id = "@3y7DlrRp=I88%d"
+trackers_urls = Array[String](["wss://mitracker.onrender.com"])
+metadata/_custom_type_script = "uid://t4pe7yqc3pnt"
